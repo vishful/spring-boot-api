@@ -22,8 +22,7 @@ public class CourseController {
 	public String welcome() {
 		return "WELCOME LOL";
 	}
-	
-	
+
 	
 	@RequestMapping("/create")
 	public String create(@RequestParam String courseId, @RequestParam String courseName, @RequestParam String provider, @RequestParam String university, @RequestParam String parentSubject, @RequestParam String childSubject, @RequestParam String url, @RequestParam double length, @RequestParam String nextSession, @RequestParam String videoUrl) {
@@ -35,10 +34,18 @@ public class CourseController {
 	public Course getCourse(@RequestParam String courseId) {
 		return courseService.getByCourseId(courseId);
 	}
-	@GetMapping("/getAll")
+	@RequestMapping("/getAll")
 	public List<Course> getAll(){
 		return courseService.getAll();
 	}
+	
+	@GetMapping("/getAllStrings")
+	public String getAllStrings(){
+		return courseService.getAll().toString();
+	}
+	
+	
+	
 	@RequestMapping("/update")
 	public String update(@RequestParam String provider, @RequestParam double length) {
 		Course c = courseService.update(provider, length);
