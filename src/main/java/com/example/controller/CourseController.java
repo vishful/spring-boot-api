@@ -18,6 +18,13 @@ public class CourseController {
 	@Autowired
 	private CourseService courseService;
 	
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "WELCOME LOL";
+	}
+	
+	
+	
 	@RequestMapping("/create")
 	public String create(@RequestParam String courseId, @RequestParam String courseName, @RequestParam String provider, @RequestParam String university, @RequestParam String parentSubject, @RequestParam String childSubject, @RequestParam String url, @RequestParam double length, @RequestParam String nextSession, @RequestParam String videoUrl) {
 		Course c = courseService.create(courseId, courseName, provider, university, parentSubject, childSubject, url, length, nextSession, videoUrl);
@@ -28,7 +35,7 @@ public class CourseController {
 	public Course getCourse(@RequestParam String courseId) {
 		return courseService.getByCourseId(courseId);
 	}
-	@GetMapping("/getAll")
+	@RequestMapping("/getAll")
 	public List<Course> getAll(){
 		return courseService.getAll();
 	}
