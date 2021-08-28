@@ -35,7 +35,7 @@ public class CourseController {
 	public Course getCourse(@RequestParam String courseId) {
 		return courseService.getByCourseId(courseId);
 	}
-	@RequestMapping("/getAll")
+	@GetMapping("/getAll")
 	public List<Course> getAll(){
 		return courseService.getAll();
 	}
