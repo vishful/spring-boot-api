@@ -41,7 +41,8 @@ public class CourseController {
 	
 	@GetMapping("/getAllStrings")
 	public String getAllStrings(){
-		return courseService.getAll().toString();
+		List<Course> c= courseService.getAll();
+		return c.toString();
 	}
 	
 	
