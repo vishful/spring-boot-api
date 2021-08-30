@@ -14,7 +14,7 @@ import com.example.model.Course;
 import com.example.service.CourseService;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://frontendreactcourses.herokuapp.com/")
 @RestController
 public class CourseController {
 
